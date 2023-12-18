@@ -24,4 +24,17 @@ public abstract class Users{
     private double taxOwed;
     private String username;
     private String password;
+
+public Users(int ID, String firstName, String lastName, String email, String PPSN, double grossIncome, double taxCredit, double taxOwed, String username, String password) {
+        this.ID = currentID++;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.PPSN = PPSN;
+        this.grossIncome = grossIncome;
+        this.taxCredit = taxCredit;
+        this.taxOwed = taxOwed;
+        this.username = username;
+        this.password = password;
+    }
 }
