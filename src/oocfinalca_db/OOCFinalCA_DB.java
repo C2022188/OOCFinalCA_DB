@@ -3,6 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package oocfinalca_db;
+
+import java.sql.SQLException;
+
 /**
  *
  * @author caroo
@@ -18,9 +21,24 @@ public class OOCFinalCA_DB {
 
     /**
      * @param args the command line arguments
+     * @throws java.sql.SQLException
+     * @throws java.lang.ClassNotFoundException
+     * @throws java.lang.InstantiationException
+     * @throws java.lang.IllegalAccessException
      */
-    public static void main(String[] args) {
-        
-    }
+         
+   
+    public static void main(String[] args) throws SQLException, ClassNotFoundException, InstantiationException, IllegalAccessException{
+                //***************Codigo para verificar se a database foi criada*************************************
+        if (SetupDB.setupDB()){
+           System.out.println("Database and table created");
+           
+        }else {
+            System.out.println("Oh no! There was a database creation problem...");
+       }
+            }
     
-}
+       }
+    
+    
+
