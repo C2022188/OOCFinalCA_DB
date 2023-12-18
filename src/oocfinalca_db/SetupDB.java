@@ -8,6 +8,6 @@ package oocfinalca_db;
  *
  * @author caroo
  */
-public class SetupDB {
+public class SetupDB extends Database{
     
 }

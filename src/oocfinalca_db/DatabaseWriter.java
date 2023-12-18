@@ -8,6 +8,6 @@ package oocfinalca_db;
  *
  * @author caroo
  */
-public class DatabaseWriter {
+public class DatabaseWriter extends Database {
     
 }

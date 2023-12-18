@@ -8,6 +8,8 @@ package oocfinalca_db;
  *
  * @author caroo
  */
-public class DatabaseReader {
+public class DatabaseReader extends Database{
+    
+ 
     
 }
