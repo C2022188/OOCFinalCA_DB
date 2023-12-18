@@ -11,9 +11,9 @@ package oocfinalca_db;
 public abstract class Users implements UserOptions{
 
 
-
-    private int ID;
-    private static int currentID = 1;
+   // all attributes given to this class users
+    private int ID; // attribute for the ID which will be incremented everytime a new user is added
+    private static int currentID = 1;// current ID for the current user
     
     private String firstName;
     private String lastName;
@@ -24,7 +24,7 @@ public abstract class Users implements UserOptions{
     private double taxOwed;
     private String username;
     private String password;
-
+// inserted a constructor with its parameters 
 public Users(int ID, String firstName, String lastName, String email, String PPSN, double grossIncome, double taxCredit, double taxOwed, String username, String password) {
         this.ID = currentID++;
         this.firstName = firstName;
@@ -37,6 +37,7 @@ public Users(int ID, String firstName, String lastName, String email, String PPS
         this.username = username;
         this.password = password;
     }
+// getters and setters created for each attribute
 public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
@@ -120,10 +121,12 @@ public void setFirstName(String firstName) {
     public void setPassword(String password) {
         this.password = password;
     }
-    
+    // a method to return whether the credentials for admin are true
      public boolean isAdmin() {
         return getUsername().equals("Admin") && getPassword().equals("CCT");
     }
+     
+     // overriding methods from an Interface 
 @Override
     public void executeUserOptions() {
        modifyOwnProfile();
