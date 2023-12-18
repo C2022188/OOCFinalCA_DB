@@ -8,7 +8,7 @@ package oocfinalca_db;
  *
  * @author caroo
  */
-public abstract class Users{
+public abstract class Users implements UserOptions{
 
 
 
@@ -124,4 +124,29 @@ public void setFirstName(String firstName) {
      public boolean isAdmin() {
         return getUsername().equals("Admin") && getPassword().equals("CCT");
     }
+@Override
+    public void executeUserOptions() {
+       modifyOwnProfile();
+       accessUserList();
+       removeUser();
+       reviewOperations();
+    }
+
+    public void modifyOwnProfile() {
+     
+    }
+    
+    public void accessUserList() {
+      
+    }
+
+    public void removeUser() {
+    
+    }
+
+    public void reviewOperations() {
+        
+    }
+
+
 }
