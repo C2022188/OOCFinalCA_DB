@@ -8,6 +8,20 @@ package oocfinalca_db;
  *
  * @author caroo
  */
-public class Users {
+public abstract class Users{
+
+
+
+    private int ID;
+    private static int currentID = 1;
     
+    private String firstName;
+    private String lastName;
+    private String email;
+    private String PPSN;
+    private double grossIncome;
+    private double taxCredit;
+    private double taxOwed;
+    private String username;
+    private String password;
 }
