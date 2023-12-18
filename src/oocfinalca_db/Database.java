@@ -9,6 +9,7 @@ package oocfinalca_db;
  * @author caroo
  */
 public abstract class Database {
+    
     //Setting up the database local, credentials, DB, and table names 
     protected final static String DB_BASE_URL = "jdbc:mysql://localhost";
     protected final static String USER = "ooc2023";
