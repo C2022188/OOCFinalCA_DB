@@ -194,12 +194,12 @@ public class OOCFinalCA_DB {
             System.out.println("Please, enter your PASSWORD: ");
             password = UserInput.nextLine();
 
-            // Creating an Admin object with user details
-            Admin adm = new Admin(0, firstName, lastName, email, PPSN, grossIncome, taxCredit, taxOwed, username, password);
+            // Creating an User object with user details
+            RegularUser regUser = new RegularUser (0, firstName, lastName, email, PPSN, grossIncome, taxCredit, taxOwed, username, password);
 
             // Adding user to the database
             try {
-            addToDatabase(adm);
+            addToDatabase(regUser);
                 } catch (SQLException e) {
                 e.printStackTrace();
                 }
@@ -208,7 +208,7 @@ public class OOCFinalCA_DB {
 
      
     // Method to add a new user to the database
-    public static void addToDatabase(Admin newUser) throws SQLException {
+    public static void addToDatabase(RegularUser newUser) throws SQLException {
         DatabaseWriter dbw = new DatabaseWriter();
         boolean success = dbw.newUser(newUser);
 
