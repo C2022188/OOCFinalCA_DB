@@ -15,24 +15,24 @@ public class Admin extends Users{
         super(ID, firstName, lastName, email, PPSN, grossIncome, taxCredit, taxOwed, username, password);
     }
    
-    
-    @Override
-   public void modifyOwnProfile() {
-      
-        
-   }
-    @Override
-     public void accessUserList() {
-      
-    }
-
-    @Override
-    public void removeUser() {
-    
-    }
-
-    @Override
-    public void reviewOperations() {
-        
-    }
+//    
+//    @Override
+//   public void modifyOwnProfile() {
+//      
+//        
+//   }
+//    @Override
+//     public void accessUserList() {
+//      
+//    }
+//
+//    @Override
+//    public void removeUser() {
+//    
+//    }
+//
+//    @Override
+//    public void reviewOperations() {
+//        
+//    }
 }
