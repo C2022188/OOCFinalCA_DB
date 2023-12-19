@@ -130,7 +130,11 @@ public class OOCFinalCA_DB {
             }
         return false; // User not founded
             }
+<<<<<<< HEAD
         return false;
+=======
+       
+>>>>>>> 8cd2a6e495332b47599a6cede83ff2385559835d
                         
     }
      public static double newUser() throws SQLException {
