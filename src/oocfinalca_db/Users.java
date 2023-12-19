@@ -8,7 +8,7 @@ package oocfinalca_db;
  *
  * @author caroo
  */
-public abstract class Users implements UserOptions{
+public abstract class Users {
 
 
    // all attributes given to this class users
@@ -127,29 +127,29 @@ public void setFirstName(String firstName) {
     }
      
      // overriding methods from an Interface 
-@Override
-    public void executeUserOptions() {
-       modifyOwnProfile();
-       accessUserList();
-       removeUser();
-       reviewOperations();
-    }
-
-    public void modifyOwnProfile() {
-     
-    }
-    
-    public void accessUserList() {
-      
-    }
-
-    public void removeUser() {
-    
-    }
-
-    public void reviewOperations() {
-        
-    }
+//@Override
+//    public void executeUserOptions() {
+//       modifyOwnProfile();
+//       accessUserList();
+//       removeUser();
+//       reviewOperations();
+//    }
+//
+//    public void modifyOwnProfile() {
+//     
+//    }
+//    
+//    public void accessUserList() {
+//      
+//    }
+//
+//    public void removeUser() {
+//    
+//    }
+//
+//    public void reviewOperations() {
+//        
+//    }
 
 
 }
