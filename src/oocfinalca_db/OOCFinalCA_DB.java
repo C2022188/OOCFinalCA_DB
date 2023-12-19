@@ -53,10 +53,7 @@ public class OOCFinalCA_DB {
                    
             System.out.println("Admin Menu:");
             System.out.println("1: Modify Your Profile");
-            
             System.out.println("2: Access User List");
-          //  User.accessUserList();
-            
             System.out.println("3: Remove Users");
             System.out.println("4: Review Operations");
             System.out.println("0: Logout");
@@ -64,9 +61,7 @@ public class OOCFinalCA_DB {
                 }else { // Display regular user options.
             System.out.println("Regular Menu:");
             System.out.println("1: Modify Your Profile");
-            System.out.println("2: Access User List");
-            System.out.println("3: Other Admin Option"); // Adicione outras opções, se necessário
-            System.out.println("0: Logout");     
+            System.out.println("2: Save and check the equations");    
                 }
             }
                 break;
@@ -154,25 +149,35 @@ public class OOCFinalCA_DB {
             String password;
 
             // Prompting user for input and storing in variables
+        do{
             System.out.println("First Name: ");
             firstName = UserInput.nextLine();
-
+            }while(!firstName.matches("[a-zA-Z]+")); //text only
+                               
+        do{
             System.out.println("Last Name: ");
             lastName = UserInput.nextLine();
-
+            } while(!lastName.matches("[a-zA-Z]+")); //text only
+                            
+        do{
             System.out.println("Email: ");
             email = UserInput.nextLine();
-
+            } while (!email.matches(".*@.*\\..*")); //must contain '@' and '.'
+        
+        do {
             System.out.println("PPSN: ");
             PPSN = UserInput.nextLine();
+            } while (!PPSN.matches("\\d{7}[a-zA-Z]{2}")); //7 digits followed by 2 letters
 
+        
             System.out.println("grossIncome: ");
             grossIncome = UserInput.nextDouble();
             UserInput.nextLine(); // Clearing the buffer after reading double
 
+            
             System.out.println("Single or Married?");
 
-            // Determining tax credit based on user input
+            // Determining tax credit based on user input - Single or Married
             double singlePersonCredit = 1775.0;
             double marriedPersonCredit = 3550.0;
             double employeeCredit = 1775.0;
@@ -181,9 +186,9 @@ public class OOCFinalCA_DB {
             double taxCredit = 0.0;
 
             if (userInputString.equalsIgnoreCase("Single")) {
-            taxCredit = singlePersonCredit + employeeCredit;
+                taxCredit = singlePersonCredit + employeeCredit;
                 } else if (userInputString.equalsIgnoreCase("Married")) {
-            taxCredit = marriedPersonCredit + employeeCredit;
+                    taxCredit = marriedPersonCredit + employeeCredit;
                 } else {
                     System.out.println("Error");
                 }
@@ -193,29 +198,28 @@ public class OOCFinalCA_DB {
             double usc = taxCalculation.calculateUSC(grossIncome);
             
             
-            //double taxOwed = prsi + usc;
-        // to calculate the paye income tax we need to read the customer input and based on this input we can which rate will be selected to calculate paye tax
-        double firstBand = 35300;
-        double secondBand = 70800;
+            // to calculate the paye income tax we need to read the customer input and based on this input we can which rate will be selected to calculate paye tax
+            double firstBand = 35300;
+            double secondBand = 70800;
 
-        double rate1 = 0.0; // 0% for firstBand
-        double rate2 = 0.2; // 20% for secondBand
-        double rate3 = 0.4; // 40% for remainder above secondBand
+            double rate1 = 0.0; // 0% for firstBand
+            double rate2 = 0.2; // 20% for secondBand
+            double rate3 = 0.4; // 40% for remainder above secondBand
 
-        // Calculate taxable income after considering tax credits
-        double taxableIncome = grossIncome - taxCredit;
+            // Calculate taxable income after considering tax credits
+            double taxableIncome = grossIncome - taxCredit;
 
-        double payeTax = 0;
+            double payeTax = 0;
 
-        if (taxableIncome <= firstBand) {
-            payeTax = 0;
-        } else if (taxableIncome <= secondBand) {
-            payeTax = (taxableIncome - firstBand) * rate2;
-        } else {
-            payeTax = (firstBand * rate2) + ((taxableIncome - secondBand) * rate3);
-        }
-
-        double taxOwed = prsi + usc + payeTax;
+            if (taxableIncome <= firstBand) {
+                payeTax = 0;
+                } else if (taxableIncome <= secondBand) {
+                    payeTax = (taxableIncome - firstBand) * rate2;
+                } else {
+                    payeTax = (firstBand * rate2) + ((taxableIncome - secondBand) * rate3);
+                }
+            
+            double taxOwed = prsi + usc + payeTax; //final calculation Tax Owed
 
             // Prompting for username and password
             System.out.println("To proceed with the registration, please enter your chosen USERNAME again: ");
