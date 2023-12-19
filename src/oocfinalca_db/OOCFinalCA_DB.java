@@ -130,7 +130,103 @@ public class OOCFinalCA_DB {
             }
         return false; // User not founded
             }
+        return false;
                         
+    }
+
+                            public static double newUser() throws SQLException {
+
+                            Scanner UserInput = new Scanner(System.in);
+
+                            String firstName;
+                            String lastName;
+                            String email;
+                            String PPSN;
+                            double grossIncome;
+
+                            
+
+                            String username;
+                            String password;
+
+
+                            System.out.println("First Name: ");
+                            firstName = UserInput.nextLine();
+
+
+                            System.out.println("Last Name: ");
+                            lastName = UserInput.nextLine();
+
+                            System.out.println("Email: ");
+                            email = UserInput.nextLine();
+
+                            System.out.println("PPSN: ");
+                            PPSN = UserInput.nextLine();
+
+                            System.out.println("grossIncome: ");
+                            grossIncome = UserInput.nextDouble();
+                            UserInput.nextLine();
+
+
+                            System.out.println("Single or Married?");
+                             double singlePersonCredit = 1775.0;
+                             double marriedPersonCredit = 3550.0;
+                             double employeeCredit = 1775.0;
+
+
+                             
+                             String userInputString =  UserInput.nextLine(); 
+                             double taxCredit = 0.0;
+
+                             if( userInputString.equalsIgnoreCase("Single") ){
+                                 taxCredit = singlePersonCredit + employeeCredit;
+                                                              
+
+                             }else if (userInputString.equalsIgnoreCase("Married")){
+                              taxCredit = marriedPersonCredit + employeeCredit;
+
+                             }else {
+                                 System.out.println("Error");
+                             }
+
+        double prsi = TaxCalculation.calculatePRSI(grossIncome);
+        double usc = TaxCalculatation.calculateUSC(grossIncome);
+        double taxOwed = prsi + usc;
+
+
+
+        System.out.println("To proceed with the registration, please enter your chosen USERNAME again: ");
+        username = UserInput.nextLine();
+
+        System.out.println("Please, enter your PASSWORD: ");
+        password = UserInput.nextLine();
+
+        Admin adm = new Admin (0, firstName, lastName, email, PPSN, grossIncome, taxCredit, taxOwed , username, password);
+
+
+        try {
+            addToDatabase(adm);
+        } catch (SQLException e) {
+            e.printStackTrace();
+                            }
+                            return 0;
+                     }
+           
+                
+                            
     
+    public static void addToDatabase(Admin newUser) throws SQLException {
+                            DatabaseWriter dbw = new DatabaseWriter();
+                            boolean success = dbw.newUser(newUser);
+
+                            if (success) {
+                                System.out.println("Sucess - New user add.");
+                            } else {
+                                System.out.println("Error.");
+                            }
+    }
+    
+    
+                }
     
 
