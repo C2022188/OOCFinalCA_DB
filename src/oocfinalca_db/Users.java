@@ -4,11 +4,13 @@
  */
 package oocfinalca_db;
 
+import java.util.List;
+
 /**
  *
  * @author caroo
  */
-public abstract class Users {
+public abstract class Users implements UsersOptions{
 
 
    // all attributes given to this class users
@@ -24,6 +26,7 @@ public abstract class Users {
     private double taxOwed;
     private String username;
     private String password;
+    
 // inserted a constructor with its parameters 
 public Users(int ID, String firstName, String lastName, String email, String PPSN, double grossIncome, double taxCredit, double taxOwed, String username, String password) {
         this.ID = currentID++;
@@ -37,6 +40,7 @@ public Users(int ID, String firstName, String lastName, String email, String PPS
         this.username = username;
         this.password = password;
     }
+
 // getters and setters created for each attribute
 public void setFirstName(String firstName) {
         this.firstName = firstName;
@@ -126,30 +130,34 @@ public void setFirstName(String firstName) {
         return getUsername().equals("Admin") && getPassword().equals("CCT");
     }
      
+     
      // overriding methods from an Interface 
-//@Override
-//    public void executeUserOptions() {
-//       modifyOwnProfile();
-//       accessUserList();
-//       removeUser();
-//       reviewOperations();
-//    }
-//
-//    public void modifyOwnProfile() {
-//     
-//    }
-//    
-//    public void accessUserList() {
-//      
-//    }
-//
-//    public void removeUser() {
-//    
-//    }
-//
-//    public void reviewOperations() {
-//        
-//    }
+    @Override
+    public void executeUserOptions() {
+       modifyOwnProfile();
+       accessUserList();
+       removeUser();
+       reviewOperations();
+    }
 
+    public void modifyOwnProfile() {
+     
+    }
+    
+    public void accessUserList(List<Users> userList) {
+         System.out.println("User List:");
+        for (Users user : userList) {
+           System.out.println(user.getUsername());
+      
+    }
+    }
+
+    public void removeUser() {
+    
+    }
+
+    public void reviewOperations() {
+        
+    }
 
 }
