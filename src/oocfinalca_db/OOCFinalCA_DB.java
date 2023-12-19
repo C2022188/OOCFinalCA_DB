@@ -53,7 +53,10 @@ public class OOCFinalCA_DB {
                    
             System.out.println("Admin Menu:");
             System.out.println("1: Modify Your Profile");
+            
             System.out.println("2: Access User List");
+          //  User.accessUserList();
+            
             System.out.println("3: Remove Users");
             System.out.println("4: Review Operations");
             System.out.println("0: Logout");
