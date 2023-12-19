@@ -8,6 +8,10 @@ package oocfinalca_db;
  *
  * @author danie
  */
-public class RegularUser {
+public class RegularUser extends Users{
+    
+    public RegularUser(int ID, String firstName, String lastName, String email, String PPSN, double grossIncome, double taxCredit, double taxOwed, String username, String password) {
+        super(ID, firstName, lastName, email, PPSN, grossIncome, taxCredit, taxOwed, username, password);
+    }
     
 }
