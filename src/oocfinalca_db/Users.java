@@ -144,13 +144,9 @@ public void setFirstName(String firstName) {
      
     }
     
-    public void accessUserList(List<Users> userList) {
-         System.out.println("User List:");
-        for (Users user : userList) {
-           System.out.println(user.getUsername());
-      
-    }
-    }
+    public void accessUserList() {
+
+        }
 
     public void removeUser() {
     
