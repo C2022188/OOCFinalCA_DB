@@ -188,7 +188,31 @@ public class OOCFinalCA_DB {
             // Calculating PRSI and USC
             double prsi = taxCalculation.calculatePRSI(grossIncome);
             double usc = taxCalculation.calculateUSC(grossIncome);
-            double taxOwed = prsi + usc;
+            
+            
+            //double taxOwed = prsi + usc;
+        // to calculate the paye income tax we need to read the customer input and based on this input we can which rate will be selected to calculate paye tax
+        double firstBand = 35300;
+        double secondBand = 70800;
+
+        double rate1 = 0.0; // 0% for firstBand
+        double rate2 = 0.2; // 20% for secondBand
+        double rate3 = 0.4; // 40% for remainder above secondBand
+
+        // Calculate taxable income after considering tax credits
+        double taxableIncome = grossIncome - taxCredit;
+
+        double payeTax = 0;
+
+        if (taxableIncome <= firstBand) {
+            payeTax = 0;
+        } else if (taxableIncome <= secondBand) {
+            payeTax = (taxableIncome - firstBand) * rate2;
+        } else {
+            payeTax = (firstBand * rate2) + ((taxableIncome - secondBand) * rate3);
+        }
+
+        double taxOwed = prsi + usc + payeTax;
 
             // Prompting for username and password
             System.out.println("To proceed with the registration, please enter your chosen USERNAME again: ");
