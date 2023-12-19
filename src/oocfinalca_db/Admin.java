@@ -23,12 +23,13 @@ public class Admin extends Users{
     
    }
     
-    @Override
-    public void accessUserList() {
-//      System.out.println("User List:");
-//        for (Users user : userList) {
-//            System.out.println(user.getUsername());
-//    }
+    public void accessUserList(List<Users> userList) {
+        System.out.println("User List:");
+        for (Users user : userList) {
+           System.out.println(user.getUsername());
+      
+    }
+
     }
 
     @Override
