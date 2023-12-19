@@ -47,7 +47,7 @@ public class OOCFinalCA_DB {
             Users User = login(); // Attempt to log in the user.
             if (User != null){
             System.out.println("Welcome " + User.getUsername() + "!");
-            // User.executeUserOptions();
+            User.executeUserOptions();
                 
             if (User.isAdmin()) { // Display additional options if the user is an admin.
                    
