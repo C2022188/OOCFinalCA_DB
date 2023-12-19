@@ -9,5 +9,6 @@ package oocfinalca_db;
  * @author caroo
  */
 public interface UsersOptions {
+    void executeUserOptions();
     
 }

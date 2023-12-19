@@ -4,6 +4,8 @@
  */
 package oocfinalca_db;
 
+import java.util.List;
+
 /**
  *
  * @author danie
@@ -15,24 +17,27 @@ public class Admin extends Users{
         super(ID, firstName, lastName, email, PPSN, grossIncome, taxCredit, taxOwed, username, password);
     }
    
-//    
-//    @Override
-//   public void modifyOwnProfile() {
-//      
-//        
-//   }
-//    @Override
-//     public void accessUserList() {
-//      
+    
+    @Override
+    public void modifyOwnProfile() {
+    
+   }
+    
+    @Override
+    public void accessUserList() {
+//      System.out.println("User List:");
+//        for (Users user : userList) {
+//            System.out.println(user.getUsername());
 //    }
-//
-//    @Override
-//    public void removeUser() {
-//    
-//    }
-//
-//    @Override
-//    public void reviewOperations() {
-//        
-//    }
+    }
+
+    @Override
+    public void removeUser() {
+    
+    }
+
+    @Override
+    public void reviewOperations() {
+        
+    }
 }

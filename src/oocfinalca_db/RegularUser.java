@@ -15,4 +15,8 @@ public class RegularUser extends Users{
         super(ID, firstName, lastName, email, PPSN, grossIncome, taxCredit, taxOwed, username, password);
     }
     
+     @Override
+    public void modifyOwnProfile() {
+    
+   }
 }

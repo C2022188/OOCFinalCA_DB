@@ -42,11 +42,9 @@ public class DatabaseReader extends Database {
                 String username = results.getString("username");
                 String password = results.getString("Password");
                 
-                // Creating an Admin and regular user object with the data from the database
-               // Admin adm = new Admin(ID, firstName, lastName, email, PPSN, grossIncome, taxCredit, taxOwed, username, password);
+                // Creating an User object with the data from the database
                 RegularUser regUser = new RegularUser(ID, firstName, lastName, email, PPSN, grossIncome, taxCredit, taxOwed, username, password);
-                // Adding the Admin object to the usersList
-               // usersList.add(adm);
+                // Adding the User object to the usersList
                 usersList.add(regUser);
             }
         } catch (Exception e) {
@@ -81,7 +79,6 @@ public class DatabaseReader extends Database {
             String password = results.getString("Password");
             
             // Creating an RegularUser object with retrieved data
-           // Admin adm = new Admin(ID, firstName, lastName, email, PPSN, grossIncome, taxCredit, taxOwed, username, password);
             RegularUser regUser = new RegularUser(ID, firstName, lastName, email, PPSN, grossIncome, taxCredit, taxOwed, username, password);
             return regUser; // Returning the Admin object
            
