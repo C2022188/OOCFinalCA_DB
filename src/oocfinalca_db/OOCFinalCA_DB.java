@@ -33,49 +33,48 @@ public class OOCFinalCA_DB {
     public static void main(String[] args) throws SQLException, ClassNotFoundException, InstantiationException, IllegalAccessException{
      
         Scanner system = new Scanner(System.in);
-            // Display the main menu options to the user.
-            System.out.println("\"WELCOME TO YOUR REVENUE TAX CALCULATION!\n" +
+        // Display the main menu options to the user.
+        System.out.println("\"WELCOME TO YOUR REVENUE TAX CALCULATION!\n" +
                                "CHOOSE AN OPTION:\n" +
                                "1: LOGIN\n" +
                                "2: SIGN UP");
 
-            // Get the user's choice.
-            int optionNum = system.nextInt();
+        // Get the user's choice.
+        int optionNum = system.nextInt();
 
-            switch (optionNum) {
-            case 1:
-                Users User = login(); // Attempt to log in the user.
-                if (User != null){
-                System.out.println("Welcome " + User.getUsername() + "!");
-               // User.executeUserOptions();
+        switch (optionNum) {
+        case 1:
+            Users User = login(); // Attempt to log in the user.
+            if (User != null){
+            System.out.println("Welcome " + User.getUsername() + "!");
+            // User.executeUserOptions();
                 
-                if (User.isAdmin()) { // Display additional options if the user is an admin.
+            if (User.isAdmin()) { // Display additional options if the user is an admin.
                    
-                System.out.println("Admin Menu:");
-                System.out.println("1: Modify Your Profile");
-                System.out.println("2: Access User List");
-                System.out.println("3: Remove Users");
-                System.out.println("4: Review Operations");
-                System.out.println("0: Logout");
+            System.out.println("Admin Menu:");
+            System.out.println("1: Modify Your Profile");
+            System.out.println("2: Access User List");
+            System.out.println("3: Remove Users");
+            System.out.println("4: Review Operations");
+            System.out.println("0: Logout");
 
                 }else { // Display regular user options.
-                System.out.println("Regular Menu:");
-                System.out.println("1: Modify Your Profile");
-                System.out.println("2: Access User List");
-                System.out.println("3: Other Admin Option"); // Adicione outras opções, se necessário
-                System.out.println("0: Logout");
-                    
+            System.out.println("Regular Menu:");
+            System.out.println("1: Modify Your Profile");
+            System.out.println("2: Access User List");
+            System.out.println("3: Other Admin Option"); // Adicione outras opções, se necessário
+            System.out.println("0: Logout");     
                 }
-                }
+            }
                 break;
                 
-            case 2:
-                if (!userExists()) {
-                    if (newUser() == 0){
+        case 2:
+            if (!userExists()) {
+                if (newUser() == 0){
                     } else {
                     System.out.println("Error creating user.");
                     }
-                } else {
+                    } else {
                     System.out.println("User already exists in the database. Please choose a different username.");
                 }
                 break;
