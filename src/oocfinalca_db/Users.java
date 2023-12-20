@@ -98,8 +98,6 @@ public void setFirstName(String firstName) {
         return taxOwed;
     }
 
-
-
     public static int getCurrentID() {
         return currentID;
     }
@@ -107,9 +105,7 @@ public void setFirstName(String firstName) {
     public int getID() {
         return ID;
     }
-    
-    
-    
+
     public String getUsername() {
         return username;
     }
@@ -125,6 +121,8 @@ public void setFirstName(String firstName) {
     public void setPassword(String password) {
         this.password = password;
     }
+    
+    
     // a method to return whether the credentials for admin are true
      public boolean isAdmin() {
         return getUsername().equals("Admin") && getPassword().equals("CCT");
@@ -146,7 +144,7 @@ public void setFirstName(String firstName) {
     
     public void accessUserList() {
 
-        }
+    }
 
     public void removeUser() {
     
