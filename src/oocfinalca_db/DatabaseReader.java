@@ -31,21 +31,22 @@ public class DatabaseReader extends Database {
             // Iterating through the result set and retrieving user data
             while (results.next()) {
                 // getting user data from the database
-                int ID = results.getInt("ID");
-                String firstName = results.getString("firstName");
-                String lastName = results.getString("lastName");
-                String email = results.getString("email");
-                String PPSN = results.getString("PPSN");
-                double grossIncome = results.getDouble("grossIncome");
-                double taxCredit = results.getDouble("taxCredit");
-                double taxOwed = results.getDouble("taxOwed");
-                String username = results.getString("username");
-                String password = results.getString("Password");
+            int ID = results.getInt("ID");
+            String firstName = results.getString("firstName");
+            String lastName = results.getString("lastName");
+            String email = results.getString("email");
+            String PPSN = results.getString("PPSN");
+            double grossIncome = results.getDouble("grossIncome");
+            double taxCredit = results.getDouble("taxCredit");
+            double taxOwed = results.getDouble("taxOwed");
+            String username = results.getString("username");
+            String password = results.getString("Password");
                 
-                // Creating an User object with the data from the database
-                RegularUser regUser = new RegularUser(ID, firstName, lastName, email, PPSN, grossIncome, taxCredit, taxOwed, username, password);
-                // Adding the User object to the usersList
-                usersList.add(regUser);
+            // Creating an User object with the data from the database
+            RegularUser regUser = new RegularUser(ID, firstName, lastName,email, 
+                    PPSN, grossIncome, taxCredit, taxOwed, username, password);
+            // Adding the User object to the usersList
+            usersList.add(regUser);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -79,7 +80,8 @@ public class DatabaseReader extends Database {
             String password = results.getString("Password");
             
             // Creating an RegularUser object with retrieved data
-            RegularUser regUser = new RegularUser(ID, firstName, lastName, email, PPSN, grossIncome, taxCredit, taxOwed, username, password);
+            RegularUser regUser = new RegularUser(ID, firstName, lastName, email, 
+                    PPSN, grossIncome, taxCredit, taxOwed, username, password);
             return regUser; // Returning the Admin object
            
         } catch (Exception e) {
