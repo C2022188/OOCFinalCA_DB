@@ -17,7 +17,8 @@ import java.util.Scanner;
 //GitHub link: https://github.com/C2022188/OOCFinalCA_DB.git
 //Member 1: Carlos Daniel Amnbrosio 2022171
 // Member 2: Caroline Ferreira 2022188
-
+// Screencast link: https://drive.google.com/file/d/1KjqDG3rUiITm3zNRxXSWezm9VmXjce5n/view?usp=sharing
+//Screencast link 2: https://youtu.be/XBHyEuf2Ys4?si=JDF8-5j2dE-I-GIX
 
 public class OOCFinalCA_DB {
 
