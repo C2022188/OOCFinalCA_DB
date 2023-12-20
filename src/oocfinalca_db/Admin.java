@@ -4,7 +4,6 @@
  */
 package oocfinalca_db;
 
-import java.util.List;
 
 /**
  *
@@ -23,15 +22,11 @@ public class Admin extends Users{
     
    }
     
+    @Override
+    public void accessUserList() {
     
-    public void accessUserList(List<Users> userList) {
-        System.out.println("User List:");
-        for (Users user : userList) {
-           System.out.println(user.getUsername());
-      
     }
 
-    }
 
     @Override
     public void removeUser() {
